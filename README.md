@@ -1,0 +1,1 @@
+### 配置个人的vimIDE，以python为主，补全插件使用的是jedi-vim
