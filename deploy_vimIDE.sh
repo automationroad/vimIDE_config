@@ -14,7 +14,7 @@
 [ -f ~/.vimrc ] && mv ~/.vimrc  ~/.vimrc.bak
 [ -d ~/.vim ] && mv ~/.vim ~/.vim_bak
 # 配置vim
-mv vimIDE_config/vimrc_plug.sh ~/.vimrc.bundles
+mv vimIDE_config/vim_plug.sh ~/.vimrc.bundles
 mkdir -p ~/.vim/vim_header_model
 mv vimIDE_config/vim_header.sh ~/.vim/vim_header_model/vim_header
 mv vimIDE_config/user.vimrc ~/.vimrc
