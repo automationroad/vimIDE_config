@@ -19,8 +19,6 @@ Plugin 'ervandew/supertab'
 "Plugin 'Valloric/YouCompleteMe'
 " Python集成开发插件，整合了pylint, rope, pydoc, pyflakes, pep8, and mccabe，但是GitHub上说这个插件跟jedi-vim有冲突
 " Plugin 'klen/python-mode'
-" python语法检测
-Plugin 'scrooloose/syntastic'
 "添加PEP8代码风格检查，运行F7就可以进行flake8检查了
 Plugin 'nvie/vim-flake8'
 "配色方案
@@ -28,24 +26,19 @@ Plugin 'jnurmine/Zenburn'
 Plugin 'altercation/vim-colors-solarized'
 "代码折叠插件
 Plugin 'tmhedberg/SimpylFold'
-"自动缩进
-Plugin 'vim-scripts/indentpython.vim'
 "在vim的normal模式下搜索文件，normal模式就是ESC按键之后的模式
 Plugin 'kien/ctrlp.vim'
-"Powerline状态栏,可以显示当前的虚拟环境、Git分支、正在编辑的文件等信息
-Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+"比Powerline更好的状态栏显示插件,可以显示当前的虚拟环境、Git分支、正在编辑的文件等信息
+Plugin 'vim-airline/vim-airline'
 " Git集成,可以在Vim中执行基本的Git命令
 Plugin 'tpope/vim-fugitive'
 " 为nerdtree添加git支持
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 " Markdown语法高亮插件
+Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 " 显示缩进对齐线插件
 Plugin 'Yggdroot/indentLine'
-" shell命令显示插件
-Plugin 'Shougo/vimshell.vim'
-" python文档查看插件
-Plugin 'fs111/pydoc.vim'
 " 代码片段补全
 Plugin 'honza/vim-snippets'
 " 自动格式化工具，安装后运行:Autopep8就可以自动依照pep8的标准自动格式化代码
@@ -65,7 +58,7 @@ if 'VIRTUA_ENV' in os.environ:
   execfile(activate_this, dict(__file__=activate_this))
 EOF
 
-" jedi-vim 配置
+" jedi-vim 配置,第一行是启用tab键补全，第二行是禁用 . 补全
 " let g:SuperTabDefaultCompletionType = "context"
 " let g:jedi#popup_on_dot = 0
 
@@ -83,6 +76,8 @@ map <F2> :NERDTreeToggle<CR>
 
 " 设置快捷键F8代替:Autopep8
 autocmd FileType python noremap <buffer> <F8> :call Autopep8()<CR>
+" 保存文件时，自动格式化
+let g:autopep8_on_save = 1
 
 "隐藏目录树种的.pyc文件
 let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
