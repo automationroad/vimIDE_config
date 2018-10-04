@@ -28,6 +28,8 @@ cd ~/.local/share/fonts && curl -fLo "Droid Sans Mono for Powerline Nerd Font Co
 # 完整的配置覆盖插件列表配置
 cd ~
 cp -f vimIDE_config/second_version/.vimrc.bundles ~/.vimrc.bundles
+# 再执行一次，确保所有的插件安装
+vim -c "PlugInstall" -c "q" -c "q"
 # jedi 支持插件
 pip install jedi
 which pip3 && pip3 install jedi
