@@ -71,16 +71,29 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
-"设置按F2启动NerdTree，开关树形目录的快捷键
+" NERDTree 插件设置
+"设置按F2启动/关闭NerdTree，开关树形目录的快捷键
 map <F2> :NERDTreeToggle<CR>
+" 在 vim 启动的时候默认开启 NERDTree
+autocmd vimenter * NERDTree
+" 将 NERDTree 的窗口设置在 vim 窗口的右侧（默认为左侧）
+" let NERDTreeWinPos="right"
+" 当打开 NERDTree 窗口时，自动显示 Bookmarks
+let NERDTreeShowBookmarks=1
+" 在显示目录树情况下直接退出，不用退出两次才回到命令行
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+" 显示行号
+let NERDTreeShowLineNumbers=1
+let NERDTreeAutoCenter=1
+" 是否显示隐藏文件
+let NERDTreeShowHidden=1
+"隐藏目录树种的.pyc文件
+let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
 
 " 设置快捷键F8代替:Autopep8
 autocmd FileType python noremap <buffer> <F8> :call Autopep8()<CR>
 " 保存文件时，自动格式化
 let g:autopep8_on_save = 1
-
-"隐藏目录树种的.pyc文件
-let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
 
 "设置主题颜色，以及设置快捷键F5，确定什么模式下使用何种方案
 if has('gui_running')
@@ -143,5 +156,5 @@ set encoding=utf-8
 let python_highlight_all=1
 " 语法高亮
 syntax on
-" 根据不同语言类型进行不同的缩进操作
+" 开启文件类型检测
 filetype plugin indent on

@@ -1,0 +1,253 @@
+call plug#begin('~/.vim/plugged')
+
+"添加nerdtree插件，目录树插件
+Plug 'scrooloose/nerdtree'
+" NerdTree文件类型高亮
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+" 显示文件类型图标
+Plug 'ryanoasis/vim-devicons'
+" 更换主题,这个插件拥有更多主题可选,而且远程和本机操作均有效
+Plug 'chxuan/change-colorscheme'
+" 添加代码补全插件，YouCompleteMe 插件比 Jedi-vim 功能更丰富,但是由于YCM太笨重，安装可以考虑jedi-vim
+Plug 'davidhalter/jedi-vim'
+Plug 'ervandew/supertab'
+"添加PEP8代码风格检查，运行F7就可以进行flake8检查了
+Plug 'nvie/vim-flake8'
+"代码折叠插件
+Plug 'tmhedberg/SimpylFold'
+" 比ctrlp更强大的文件的模糊搜索工具
+Plug 'Yggdroot/LeaderF'
+"在vim的normal模式下的文本搜索工具，normal模式就是ESC按键之后的模式,这个插件比ctrlp更强大的文件的模糊搜索工具
+Plug 'mileszs/ack.vim'
+"比Powerline更好的状态栏显示插件,可以显示当前的虚拟环境、Git分支、正在编辑的文件等信息
+Plug 'vim-airline/vim-airline'
+" 状态栏主题颜色插件,背景插件
+Plug 'itchyny/lightline.vim'
+Plug 'joshdick/onedark.vim'
+" 文件图标下载
+Plug 'ryanoasis/vim-devicons'
+" Plug 'ryanoasis/nerd-fonts'
+" vim-airline 主题插件
+Plug 'vim-airline/vim-airline-themes'
+" Git集成,可以在Vim中执行基本的Git命令
+Plug 'tpope/vim-fugitive'
+" 为nerdtree添加git支持
+Plug 'Xuyuanp/nerdtree-git-plugin'
+" Markdown语法高亮插件
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
+" 显示缩进对齐线插件
+Plug 'Yggdroot/indentLine'
+" 代码片段补全
+Plug 'honza/vim-snippets'
+" 自动格式化工具，安装后运行:Autopep8就可以自动依照pep8的标准自动格式化代码
+Plug 'tell-k/vim-autopep8'
+" 让翻页更顺畅
+Plug 'terryma/vim-smooth-scroll'
+call plug#end()
+
+" **************通用设置**************
+set nocompatible         " 设置不兼容原始vi模式
+filetype on              " 设置开启文件类型侦测
+filetype plugin on       " 设置加载对应文件类型的插件
+set noeb                 " 关闭错误的提示
+syntax enable            " 开启语法高亮功能
+syntax on                " 自动语法高亮
+set t_Co=256             " 开启256色支持
+set cmdheight=2          " 设置命令行的高度
+set showcmd              " select模式下显示选中的行数
+set ruler                " 总是显示光标位置
+set laststatus=2         " 总是显示状态栏
+set number               " 开启行号显示
+set cursorline           " 高亮显示当前行
+set whichwrap+=<,>,h,l   " 设置光标键跨行
+set ttimeoutlen=0        " 设置<ESC>键响应时间
+set virtualedit=block,onemore   " 允许光标出现在最后一个字符的后面
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" 代码缩进和排版
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set autoindent           " 设置自动缩进
+set cindent              " 设置使用C/C++语言的自动缩进方式
+set cinoptions=g0,:0,N-s,(0    " 设置C/C++语言的具体缩进方式
+set smartindent          " 智能的选择对其方式
+filetype indent on       " 自适应不同语言的智能缩进
+set expandtab            " 将制表符扩展为空格
+set tabstop=4            " 设置编辑时制表符占用空格数
+set shiftwidth=4         " 设置格式化时制表符占用空格数
+set softtabstop=4        " 设置4个空格为制表符
+set smarttab             " 在行和段开始处使用制表符
+set nowrap               " 禁止折行
+set backspace=2          " 使用回车键正常处理indent,eol,start等
+set sidescroll=10        " 设置向右滚动字符数
+set nofoldenable         " 禁用折叠代码
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" 代码补全
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set wildmenu             " vim自身命名行模式智能补全
+" 补全时不显示窗口，只显示补全列表,默认补全时显示补全的功能
+" set completeopt-=preview
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" 搜索设置
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set hlsearch            " 高亮显示搜索结果
+set incsearch           " 开启实时搜索功能
+set ignorecase          " 搜索时大小写不敏感
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" 缓存设置
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set nobackup            " 设置不备份
+set noswapfile          " 禁止生成临时文件
+set autoread            " 文件在vim之外修改过，自动重新读入
+set autowrite           " 设置自动保存
+set confirm             " 在处理未保存或只读文件的时候，弹出确认
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" 编码设置
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set langmenu=zh_CN.UTF-8
+set helplang=cn
+set termencoding=utf-8
+set encoding=utf8
+set fileencodings=utf8,ucs-bom,gbk,cp936,gb2312,gb18030
+
+"高亮显示行伟不必要的空白字符
+highlight Whitespace ctermbg=red guibg=red
+au BufRead,BufNewFile *.py,*.pyw,*.c,*.h,*.sh match Whitespace /\s\+$\ \+/
+
+" 打开文件自动定位到最后编辑的位置
+autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | execute "normal! g'\"" | endif
+
+" shell 风格
+au BufNewFile,BufRead *.sh set tabstop=4     "tab 长度设置为 4
+au BufNewFile,BufRead *.sh set nobackup      "覆盖文件时不备份
+
+"********************插件配置设置****************
+" 主题
+set background=dark
+let g:onedark_termcolors=256
+colorscheme onedark
+
+" airline
+let g:airline_theme="onedark"
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
+
+" nerdtree-git-plug
+let g:NERDTreeIndicatorMapCustom = {
+    \ "Modified"  : "✹",
+    \ "Staged"    : "✚",
+    \ "Untracked" : "✭",
+    \ "Renamed"   : "➜",
+    \ "Unmerged"  : "═",
+    \ "Deleted"   : "✖",
+    \ "Dirty"     : "✗",
+    \ "Clean"     : "✔︎︎",
+    \ 'Ignored'   : '☒',
+    \ "Unknown"   : "?"
+    \ }
+
+" LeaderF,Ctrl+f 搜索文件
+nnoremap <C-F> :LeaderfFile ~<cr>
+let g:Lf_WildIgnore = {
+            \ 'dir': ['.svn','.git','.hg','.vscode','.wine','.deepinwine','.oh-my-zsh'],
+            \ 'file': ['*.sw?','~$*','*.bak','*.exe','*.o','*.so','*.py[co]']
+            \}
+let g:Lf_UseCache = 0
+
+
+" vim-smooth-scroll
+noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 0, 2)<CR>                                                                                         
+noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 0, 2)<CR>
+noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 0, 4)<CR>
+noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 0, 4)<CR>
+
+" jedi-vim 配置,第一行是启用tab键补全，第二行是禁用 . 补全
+" let g:SuperTabDefaultCompletionType = "context"
+" let g:jedi#popup_on_dot = 0
+
+"设置分割窗口
+set splitbelow
+set splitright
+"设置窗口切换快捷键，例如，打开目录树的情况下，需要两个窗口来回切换
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+" NERDTree 插件设置
+"设置按F2启动/关闭NerdTree，开关树形目录的快捷键
+map <F2> :NERDTreeToggle<CR>
+" 在 vim 启动的时候默认开启 NERDTree
+autocmd vimenter * NERDTree
+" 将 NERDTree 的窗口设置在 vim 窗口的右侧（默认为左侧）
+" let NERDTreeWinPos="right"
+" 当打开 NERDTree 窗口时，自动显示 Bookmarks
+let NERDTreeShowBookmarks=1
+
+" 显示行号
+let NERDTreeShowLineNumbers=1
+let NERDTreeAutoCenter=1
+" 是否显示隐藏文件
+let NERDTreeShowHidden=1
+"隐藏目录树种的.pyc文件
+let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
+" 高亮显示目录树文件
+let g:NERDTreeFileExtensionHighlightFullName = 1
+let g:NERDTreeExactMatchHighlightFullName = 1
+let g:NERDTreePatternMatchHighlightFullName = 1
+let g:NERDTreeHighlightFolders = 1
+" 更换目录的显示图标
+let g:NERDTreeDirArrowExpandable='▷'
+let g:NERDTreeDirArrowCollapsible='▼'
+
+" 设置快捷键F8代替:Autopep8
+autocmd FileType python noremap <buffer> <F8> :call Autopep8()<CR>
+" 保存文件时，自动格式化
+" let g:autopep8_on_save = 1
+
+" 更换主题快捷键
+nnoremap <silent> <F9> :PreviousColorScheme<cr>
+inoremap <silent> <F9> <esc> :PreviousColorScheme<cr>
+nnoremap <silent> <F10> :NextColorScheme<cr>
+inoremap <silent> <F10> <esc> :NextColorScheme<cr>
+nnoremap <silent> <F11> :RandomColorScheme<cr>
+inoremap <silent> <F11> <esc> :RandomColorScheme<cr>
+nnoremap <silent> <F12> :ShowColorScheme<cr>
+inoremap <silent> <F12> <esc> :ShowColorScheme<cr>
+
+"开启代码折叠
+set foldmethod=indent
+set foldlevel=99
+"设置快捷键为空格
+noremap <space> za
+"显示折叠代码的文档字符串
+let g:SimpylFold_docstring_preview=1
+
+" vim字体设置
+if has("gui_running")
+    set guifont=Droid\ Sans\ Mono\ Nerd\ Font\ Complete:h18 " 设置字体
+    set guioptions-=m           " 隐藏菜单栏
+    set guioptions-=T           " 隐藏工具栏
+    set guioptions-=L           " 隐藏左侧滚动条
+    set guioptions-=r           " 隐藏右侧滚动条
+    set guioptions-=b           " 隐藏底部滚动条
+    set showtabline=0           " 隐藏Tab栏
+    set guicursor=n-v-c:ver5    " 设置光标为竖线
+endif
+
+" 在显示目录树情况下直接退出，不用退出两次才回到命令行
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+" 命令行安装命令
+" vim -c "PlugInstall" -c "q" -c "q"
