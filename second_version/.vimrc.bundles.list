@@ -1,0 +1,47 @@
+call plug#begin('~/.vim/plugged')
+
+"添加nerdtree插件，目录树插件
+Plug 'scrooloose/nerdtree'
+" NerdTree文件类型高亮
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+" 显示文件类型图标
+Plug 'ryanoasis/vim-devicons'
+" 更换主题,这个插件拥有更多主题可选,而且远程和本机操作均有效
+Plug 'chxuan/change-colorscheme'
+" 添加代码补全插件，YouCompleteMe 插件比 Jedi-vim 功能更丰富,但是由于YCM太笨重，安装可以考虑jedi-vim
+Plug 'davidhalter/jedi-vim'
+Plug 'ervandew/supertab'
+"添加PEP8代码风格检查，运行F7就可以进行flake8检查了
+Plug 'nvie/vim-flake8'
+"代码折叠插件
+Plug 'tmhedberg/SimpylFold'
+" 比ctrlp更强大的文件的模糊搜索工具
+Plug 'Yggdroot/LeaderF'
+"在vim的normal模式下的文本搜索工具，normal模式就是ESC按键之后的模式,这个插件比ctrlp更强大的文件的模糊搜索工具
+Plug 'mileszs/ack.vim'
+"比Powerline更好的状态栏显示插件,可以显示当前的虚拟环境、Git分支、正在编辑的文件等信息
+Plug 'vim-airline/vim-airline'
+" 状态栏主题颜色插件,背景插件
+Plug 'itchyny/lightline.vim'
+Plug 'joshdick/onedark.vim'
+" 文件图标下载
+Plug 'ryanoasis/vim-devicons'
+" Plug 'ryanoasis/nerd-fonts'
+" vim-airline 主题插件
+Plug 'vim-airline/vim-airline-themes'
+" Git集成,可以在Vim中执行基本的Git命令
+Plug 'tpope/vim-fugitive'
+" 为nerdtree添加git支持
+Plug 'Xuyuanp/nerdtree-git-plugin'
+" Markdown语法高亮插件
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
+" 显示缩进对齐线插件
+Plug 'Yggdroot/indentLine'
+" 代码片段补全
+Plug 'honza/vim-snippets'
+" 自动格式化工具，安装后运行:Autopep8就可以自动依照pep8的标准自动格式化代码
+Plug 'tell-k/vim-autopep8'
+" 让翻页更顺畅
+Plug 'terryma/vim-smooth-scroll'
+call plug#end()

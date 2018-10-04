@@ -15,11 +15,18 @@
 [ -d ~/.vim ] && mv ~/.vim ~/.vim_bak
 # 配置vim
 cp -f vimIDE_config/second_version/.vimrc ~/.vimrc
-cp -f vimIDE_config/second_version/.vimrc.bundles ~/.vimrc.bundles
+# 下载的插件列表
+cp -f vimIDE_config/second_version/.vimrc.bundles.list ~/.vimrc.bundles
 mkdir -p ~/.vim/vim_header_model
 cp -f vimIDE_config/second_version/vim_header ~/.vim/vim_header_model/vim_header
-# 安装vim插件
+# 安装vim-plug插件管理器
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 vim -c "PlugInstall" -c "q" -c "q"
+# 字体下载
+mkdir -p ~/.local/share/fonts
+cd ~/.local/share/fonts && curl -fLo "Droid Sans Mono for Powerline Nerd Font Complete.otf" https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/DroidSansMono/complete/Droid%20Sans%20Mono%20Nerd%20Font%20Complete.otf
+# 完整的配置覆盖插件列表配置
+cp -f vimIDE_config/second_version/.vimrc.bundles ~/.vimrc.bundles
 # jedi 支持插件
 pip install jedi
 which pip3 && pip3 install jedi
