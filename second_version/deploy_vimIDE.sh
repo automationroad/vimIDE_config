@@ -26,6 +26,7 @@ vim -c "PlugInstall" -c "q" -c "q"
 mkdir -p ~/.local/share/fonts
 cd ~/.local/share/fonts && curl -fLo "Droid Sans Mono for Powerline Nerd Font Complete.otf" https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/DroidSansMono/complete/Droid%20Sans%20Mono%20Nerd%20Font%20Complete.otf
 # 完整的配置覆盖插件列表配置
+cd ~
 cp -f vimIDE_config/second_version/.vimrc.bundles ~/.vimrc.bundles
 # jedi 支持插件
 pip install jedi

@@ -26,7 +26,6 @@ Plug 'itchyny/lightline.vim'
 Plug 'joshdick/onedark.vim'
 " 文件图标下载
 Plug 'ryanoasis/vim-devicons'
-" Plug 'ryanoasis/nerd-fonts'
 " vim-airline 主题插件
 Plug 'vim-airline/vim-airline-themes'
 " Git集成,可以在Vim中执行基本的Git命令
