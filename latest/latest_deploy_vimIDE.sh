@@ -23,4 +23,5 @@ cd ~
 
 # vim configure
 mv vim/.v* .
-mv vim/.local .
+[ ! -d ~/.local/share/fonts/ ] && mkdir -p ~/.local/share/fonts/
+mv vim/.local/share/fonts/* ~/.local/share/fonts/
