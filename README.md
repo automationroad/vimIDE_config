@@ -11,3 +11,11 @@
 git clone https://github.com/automationroad/vimIDE_config.git
 sh vimIDE_config/second_version/deploy_vimIDE.sh
 ```
+
+最新版部署
+
+```shell
+git clone https://github.com/automationroad/vimIDE_config.git
+sh vimIDE_config/latest/latest_deploy_vimIDE.sh
+```
+

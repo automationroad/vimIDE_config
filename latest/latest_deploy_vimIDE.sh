@@ -11,15 +11,16 @@
 # Version: 0.1
 #########################################################################
 
-# go home
-cd ~
-
 # backup old vim configure
 [ -f ~/.vimrc ] && mv ~/.vimrc ~/.vimrc.bak
 [ -d ~/.vim ] && mv ~/.vim ~/.vim_bak
 
 # decompression
-tar --no-same-owner -zxf vimIDE_config/latest/vim.tar.gz
+tar --no-same-owner -zxf vimIDE_config/latest/vim.tar.gz -C ~
+
+# go home
+cd ~
 
 # vim configure
-mv vim/* .
+mv vim/.v* .
+mv vim/.local .
