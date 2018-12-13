@@ -12,7 +12,9 @@ git clone https://github.com/automationroad/vimIDE_config.git
 sh vimIDE_config/second_version/deploy_vimIDE.sh
 ```
 
-最新版部署
+### 最新版部署
+
+centos和Ubuntu都可以，其他发行版应该一样，里面涉及的安装跟发行版无关，配置只对 当前 用户生效
 
 ```shell
 git clone https://github.com/automationroad/vimIDE_config.git
