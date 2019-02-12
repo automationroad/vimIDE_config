@@ -4,7 +4,7 @@
 # File Name: latest_deploy_vimIDE.sh
 # file_path: ~/vimIDE_config/latest/latest_deploy_vimIDE.sh
 # Author: 浪子尘心
-# Mail: hj536418286@gmail.com
+# Mail: 536418286@qq.com
 # Created Time: 2018-12-13 16:43:17
 # Last Changed: 2018-12-13 17:00:05
 # Description: latest vim configure
