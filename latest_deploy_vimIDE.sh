@@ -2,13 +2,13 @@
 
 #########################################################################
 # File Name: latest_deploy_vimIDE.sh
-# file_path: ~/vimIDE_config/latest/latest_deploy_vimIDE.sh
-# Author: 浪子尘心
+# file_path: 
+# Author: 博客园--浪子尘心
 # Mail: 536418286@qq.com
-# Created Time: 2018-12-13 16:43:17
-# Last Changed: 2018-12-13 17:00:05
-# Description: latest vim configure
-# Version: 0.1
+# Created Time: 2019-07-18 14:58:25
+# Last Changed: 2019-07-18 14:58:43
+# Description: 
+# Version: 
 #########################################################################
 
 # backup old vim configure
@@ -16,7 +16,7 @@
 [ -d ~/.vim ] && mv ~/.vim ~/.vim_bak
 
 # decompression
-tar --no-same-owner -zxf ./vim.tar.gz -C ~
+tar --no-same-owner -zxf vim.tar.gz -C ~
 
 # go home
 cd ~
