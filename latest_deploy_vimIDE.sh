@@ -16,7 +16,7 @@
 [ -d ~/.vim ] && mv ~/.vim ~/.vim_bak
 
 # decompression
-tar --no-same-owner -zxf vimIDE_config/latest/vim.tar.gz -C ~
+tar --no-same-owner -zxf ./vim.tar.gz -C ~
 
 # go home
 cd ~
