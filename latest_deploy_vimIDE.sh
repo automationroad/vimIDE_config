@@ -23,3 +23,6 @@ cd ~
 
 # vim configure
 mv vim/.v* .
+
+# del dir
+rm -rf ~/vim
