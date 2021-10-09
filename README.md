@@ -26,6 +26,7 @@ yum install epel-release -y
 yum install python2-pip -y
 # 自定义部署过程
 git clone https://github.com/automationroad/vimIDE_config.git
+cd vimIDE_config/
 sh latest_deploy_vimIDE.sh
 ```
 
